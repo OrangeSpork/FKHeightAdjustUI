@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FKHeightAdjustUI", "FKHeightAdjustUI\FKHeightAdjustUI.shproj", "{9BC28EC9-09FA-4FB6-9C15-F48725DB5A17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HS2_FKHeightAdjustUI", "HS2_FKHeightAdjustUI\HS2_FKHeightAdjustUI.csproj", "{7BE60793-8A86-43D6-9CAC-CB322B461C12}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FKHeightAdjustUI\FKHeightAdjustUI.projitems*{7be60793-8a86-43d6-9cac-cb322b461c12}*SharedItemsImports = 4
+		FKHeightAdjustUI\FKHeightAdjustUI.projitems*{9bc28ec9-09fa-4fb6-9c15-f48725db5a17}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BE60793-8A86-43D6-9CAC-CB322B461C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE60793-8A86-43D6-9CAC-CB322B461C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE60793-8A86-43D6-9CAC-CB322B461C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE60793-8A86-43D6-9CAC-CB322B461C12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4086C80-80AA-49BA-8547-6442BE22143F}
+	EndGlobalSection
+EndGlobal
