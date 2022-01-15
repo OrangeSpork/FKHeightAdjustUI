@@ -53,7 +53,7 @@ namespace FKHeightAdjustUI
             Slider sizeSlider = GameObject.Find("StudioScene/Canvas Main Menu/02_Manipulate/00_Chara/02_Kinematic/00_FK/Slider Size").GetComponent<Slider>();
             HeightAdjustSlider = GameObject.Instantiate(sizeSlider, sizeSlider.transform.parent);
             HeightAdjustSlider.name = "Slider HeightAdj";
-            HeightAdjustSlider.transform.Translate(new Vector3(-80, -60, 0), Space.Self);
+            HeightAdjustSlider.transform.localPosition = new Vector3(sizeSlider.transform.localPosition.x - 75, sizeSlider.transform.localPosition.y - 60, 0);
             HeightAdjustSlider.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 20);
 
             UpdateSliderRange();
