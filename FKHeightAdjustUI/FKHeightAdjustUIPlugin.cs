@@ -18,7 +18,7 @@ namespace FKHeightAdjustUI
     {
         public const string GUID = "orange.spork.fkheightadjustuiplugin";
         public const string PluginName = "FK Height Adjust UI";
-        public const string Version = "1.0.0";
+        public const string Version = "1.0.1";
 
         public static FKHeightAdjustUIPlugin Instance { get; set; }
 
