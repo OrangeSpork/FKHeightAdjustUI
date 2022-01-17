@@ -3,6 +3,7 @@ using KKABMX.Core;
 using KKAPI;
 using KKAPI.Chara;
 using KKAPI.Studio;
+using Studio;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +15,36 @@ namespace FKHeightAdjustUI
 {
     public class FKHeightAdjustUICharaController : CharaCustomFunctionController
     {
-        public float HeightAdjust { get; set; } = 0.0f;
+        private ChangeAmount hipsChangeAmount;
+        public float HeightAdjust {
+            get
+            {
+                if (hipsChangeAmount == null)
+                    hipsChangeAmount = FindHipsChangeAmount();
+
+                return hipsChangeAmount == null ? 0.0f : hipsChangeAmount.pos.y;
+            }
+            set
+            {
+                if (hipsChangeAmount == null)
+                    hipsChangeAmount = FindHipsChangeAmount();
+
+                if (hipsChangeAmount != null)
+                {
+                    hipsChangeAmount.pos = new Vector3(hipsChangeAmount.pos.x, value, hipsChangeAmount.pos.z);
+#if DEBUG
+                    FKHeightAdjustUIPlugin.Instance.Log.LogInfo($"Updated Height Adjust to {hipsChangeAmount.pos.y}");
+#endif
+                }
+                else
+                {
+#if DEBUG
+                    FKHeightAdjustUIPlugin.Instance.Log.LogInfo($"Hips Change Amount not available");
+#endif
+
+                }
+            }
+        }
 
         private HeightAdjustBoneEffect HeightAdjustBoneEffectInstance;
 
@@ -23,6 +53,15 @@ namespace FKHeightAdjustUI
             base.OnEnable();
             if (HeightAdjustBoneEffectInstance == null)
                 StartCoroutine(InitializeHeightAdjustment());
+        }
+
+        private ChangeAmount FindHipsChangeAmount()
+        {
+            OCIChar.BoneInfo bone = ChaControl.GetOCIChar().listBones.Find((bi) => { return String.Equals(bi?.guideObject?.transformTarget.name, "cf_J_Hips");  });
+            if (bone != null)
+                return bone.guideObject.changeAmount;
+            else
+                return null;
         }
 
         private IEnumerator InitializeHeightAdjustment()
