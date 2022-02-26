@@ -10,10 +10,14 @@ using System.Text;
 
 namespace FKHeightAdjustUI
 {
+#if AI || HS2
+    [BepInProcess("StudioNEOV2")]
+#else
+    [BepInProcess("CharaStudio")]
+#endif
     [BepInPlugin(GUID, PluginName, Version)]
     [BepInDependency(KoikatuAPI.GUID, KoikatuAPI.VersionConst)]
     [BepInDependency(KKABMX.Core.KKABMX_Core.GUID, KKABMX.Core.KKABMX_Core.Version)]
-    [BepInProcess("StudioNEOV2")]
     public class FKHeightAdjustUIPlugin : BaseUnityPlugin
     {
         public const string GUID = "orange.spork.fkheightadjustuiplugin";

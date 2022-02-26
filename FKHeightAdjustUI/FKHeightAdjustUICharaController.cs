@@ -10,13 +10,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+#if KK || KKS
+using static ChaFileDefine;
+#endif
 
 namespace FKHeightAdjustUI
 {
     public class FKHeightAdjustUICharaController : CharaCustomFunctionController
     {
         private ChangeAmount hipsChangeAmount;
-        public float HeightAdjust {
+#if AI || HS2
+        private const string HeightAdjustBone = "cf_J_Hips";
+#elif KK || KKS
+        private const string HeightAdjustBone = "cf_j_hips";
+#endif
+
+        public float HeightAdjust
+        {
             get
             {
                 if (hipsChangeAmount == null)
@@ -57,7 +67,7 @@ namespace FKHeightAdjustUI
 
         private ChangeAmount FindHipsChangeAmount()
         {
-            OCIChar.BoneInfo bone = ChaControl.GetOCIChar().listBones.Find((bi) => { return String.Equals(bi?.guideObject?.transformTarget.name, "cf_J_Hips");  });
+            OCIChar.BoneInfo bone = ChaControl.GetOCIChar().listBones.Find((bi) => { return String.Equals(bi?.guideObject?.transformTarget.name, HeightAdjustBone); });
             if (bone != null)
                 return bone.guideObject.changeAmount;
             else
@@ -101,7 +111,7 @@ namespace FKHeightAdjustUI
 
         private class HeightAdjustBoneEffect : BoneEffect
         {
-            private static string[] HeightAdjustBones = { "cf_J_Hips"};
+            private static string[] HeightAdjustBones = { HeightAdjustBone };
             private BoneModifierData HeightAdjustModifier;
             private FKHeightAdjustUICharaController controller;
 
@@ -135,7 +145,6 @@ namespace FKHeightAdjustUI
                 }
 
                 return HeightAdjustModifier;
-
             }
         }
     }

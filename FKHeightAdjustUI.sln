@@ -9,10 +9,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HS2_FKHeightAdjustUI", "HS2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AI_FKHeightAdjustUI", "AI_FKHeightAdjustUI\AI_FKHeightAdjustUI.csproj", "{82C308B9-ECE8-4A50-9E8D-F235461E7CF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKS_FKHeightAdjustUI", "KKS_FKHeightAdjustUI\KKS_FKHeightAdjustUI.csproj", "{4E436E85-8D1F-4E5A-BF5E-E945B4292B88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KK_FKHeightAdjustUI", "KK_FKHeightAdjustUI\KK_FKHeightAdjustUI.csproj", "{9A9E2245-CBE5-4211-B46A-7A8CD67438A3}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FKHeightAdjustUI\FKHeightAdjustUI.projitems*{4e436e85-8d1f-4e5a-bf5e-e945b4292b88}*SharedItemsImports = 4
 		FKHeightAdjustUI\FKHeightAdjustUI.projitems*{7be60793-8a86-43d6-9cac-cb322b461c12}*SharedItemsImports = 4
 		FKHeightAdjustUI\FKHeightAdjustUI.projitems*{82c308b9-ece8-4a50-9e8d-f235461e7cf4}*SharedItemsImports = 4
+		FKHeightAdjustUI\FKHeightAdjustUI.projitems*{9a9e2245-cbe5-4211-b46a-7a8cd67438a3}*SharedItemsImports = 4
 		FKHeightAdjustUI\FKHeightAdjustUI.projitems*{9bc28ec9-09fa-4fb6-9c15-f48725db5a17}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +34,14 @@ Global
 		{82C308B9-ECE8-4A50-9E8D-F235461E7CF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82C308B9-ECE8-4A50-9E8D-F235461E7CF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82C308B9-ECE8-4A50-9E8D-F235461E7CF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E436E85-8D1F-4E5A-BF5E-E945B4292B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E436E85-8D1F-4E5A-BF5E-E945B4292B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E436E85-8D1F-4E5A-BF5E-E945B4292B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E436E85-8D1F-4E5A-BF5E-E945B4292B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A9E2245-CBE5-4211-B46A-7A8CD67438A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A9E2245-CBE5-4211-B46A-7A8CD67438A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A9E2245-CBE5-4211-B46A-7A8CD67438A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A9E2245-CBE5-4211-B46A-7A8CD67438A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
