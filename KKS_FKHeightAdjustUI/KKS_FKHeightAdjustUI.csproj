@@ -51,8 +51,8 @@
       <HintPath>..\packages\IllusionLibs.BepInEx.5.4.15\lib\net35\BepInEx.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="KKSABMX, Version=4.4.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ABMX.KKSABMX.4.4.5\lib\net46\KKSABMX.dll</HintPath>
+    <Reference Include="KKSABMX, Version=4.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ABMX.KKSABMX.4.4.6\lib\net46\KKSABMX.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="KKSAPI, Version=1.31.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -155,8 +155,8 @@
       <HintPath>..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.UIModule.2019.4.9\lib\net46\UnityEngine.UIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="XUnity.AutoTranslator.Plugin.Core, Version=4.16.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.4.16.0\lib\net46\XUnity.AutoTranslator.Plugin.Core.dll</HintPath>
+    <Reference Include="XUnity.AutoTranslator.Plugin.Core, Version=4.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.4.18.0\lib\net46\XUnity.AutoTranslator.Plugin.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -190,7 +190,7 @@
     <Error Condition="!Exists('..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.ImageConversionModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.ImageConversionModule.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.ImageConversionModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.ImageConversionModule.targets'))" />
     <Error Condition="!Exists('..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.PhysicsModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.PhysicsModule.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.PhysicsModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.PhysicsModule.targets'))" />
     <Error Condition="!Exists('..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule.targets'))" />
-    <Error Condition="!Exists('..\packages\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.4.16.0\build\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.4.16.0\build\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.4.18.0\build\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.4.18.0\build\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.targets'))" />
   </Target>
   <Import Project="..\packages\IllusionLibs.KoikatsuSunshine.Assembly-CSharp-firstpass.2021.9.17\build\IllusionLibs.KoikatsuSunshine.Assembly-CSharp-firstpass.targets" Condition="Exists('..\packages\IllusionLibs.KoikatsuSunshine.Assembly-CSharp-firstpass.2021.9.17\build\IllusionLibs.KoikatsuSunshine.Assembly-CSharp-firstpass.targets')" />
   <Import Project="..\packages\IllusionLibs.KoikatsuSunshine.UniRx.2021.9.17\build\IllusionLibs.KoikatsuSunshine.UniRx.targets" Condition="Exists('..\packages\IllusionLibs.KoikatsuSunshine.UniRx.2021.9.17\build\IllusionLibs.KoikatsuSunshine.UniRx.targets')" />
@@ -208,5 +208,5 @@
   <Import Project="..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.ImageConversionModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.ImageConversionModule.targets" Condition="Exists('..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.ImageConversionModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.ImageConversionModule.targets')" />
   <Import Project="..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.PhysicsModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.PhysicsModule.targets" Condition="Exists('..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.PhysicsModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.PhysicsModule.targets')" />
   <Import Project="..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule.targets" Condition="Exists('..\packages\IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule.2019.4.9\build\IllusionLibs.KoikatsuSunshine.UnityEngine.TextRenderingModule.targets')" />
-  <Import Project="..\packages\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.4.16.0\build\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.targets" Condition="Exists('..\packages\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.4.16.0\build\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.targets')" />
+  <Import Project="..\packages\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.4.18.0\build\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.targets" Condition="Exists('..\packages\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.4.18.0\build\IllusionLibs.XUnity.AutoTranslator.Plugin.Core.targets')" />
 </Project>
