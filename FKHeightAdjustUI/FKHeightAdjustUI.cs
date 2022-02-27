@@ -28,7 +28,11 @@ namespace FKHeightAdjustUI
 
         public static void UpdateSliderRange()
         {
+#if AI || HS2
             float hipHeightConst = -11.435f;
+#elif KK || KKS
+            float hipHeightConst = -1.435f;
+#endif
             HeightAdjustSlider.minValue = hipHeightConst - (hipHeightConst * (0 - ((float)FKHeightAdjustUIPlugin.MinSliderHeightPercent.Value / 100f)));
             HeightAdjustSlider.maxValue = (hipHeightConst * -1) + hipHeightConst * ((float)FKHeightAdjustUIPlugin.MaxSliderHeightPercent.Value / 100f);
 
