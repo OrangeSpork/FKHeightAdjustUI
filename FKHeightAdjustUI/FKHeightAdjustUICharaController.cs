@@ -67,7 +67,7 @@ namespace FKHeightAdjustUI
 
         private ChangeAmount FindHipsChangeAmount()
         {
-            OCIChar.BoneInfo bone = ChaControl.GetOCIChar().listBones.Find((bi) => { return String.Equals(bi?.guideObject?.transformTarget.name, HeightAdjustBone); });
+            OCIChar.BoneInfo bone = ChaControl.GetOCIChar().listBones.Find((bi) => { return String.Equals(bi?.guideObject?.transformTarget?.name, HeightAdjustBone); });
             if (bone != null)
                 return bone.guideObject.changeAmount;
             else
