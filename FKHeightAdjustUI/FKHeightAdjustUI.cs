@@ -17,14 +17,22 @@ namespace FKHeightAdjustUI
         private static Slider HeightAdjustSlider;
         private static Button HeightAdjustButton;
         private static TextMeshProUGUI HeightAdjustButtonText;
+#if AI || HS2
         private static InputField HeightAdjustInputField;
+#elif KK || KKS
+        private static TMP_InputField HeightAdjustInputField;
+#endif
 
         private static OCIChar selectedChar;
         private static bool UIInitialized = false;
 
         public static void UpdateSliderRange()
         {
+#if AI || HS2
             float hipHeightConst = -11.435f;
+#elif KK || KKS
+            float hipHeightConst = -1.435f;
+#endif
             HeightAdjustSlider.minValue = hipHeightConst - (hipHeightConst * (0 - ((float)FKHeightAdjustUIPlugin.MinSliderHeightPercent.Value / 100f)));
             HeightAdjustSlider.maxValue = (hipHeightConst * -1) + hipHeightConst * ((float)FKHeightAdjustUIPlugin.MaxSliderHeightPercent.Value / 100f);
 
@@ -71,6 +79,7 @@ namespace FKHeightAdjustUI
                 }
             });
 
+#if AI || HS2
             // Clone Text
             GameObject camRotXField = GameObject.Find("StudioScene/Canvas Main Menu/04_System/02_Option/Option/Viewport/Content/Camera/Rot Speed X/InputField");
 
@@ -80,6 +89,17 @@ namespace FKHeightAdjustUI
             HeightAdjustInputField.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 20);
             HeightAdjustInputField.onValueChanged = new InputField.OnChangeEvent();
             HeightAdjustInputField.onEndEdit = new InputField.SubmitEvent();
+#elif KK || KKS
+            GameObject camRotXField = GameObject.Find("StudioScene/Canvas Main Menu/04_System/02_Option/Option/Viewport/Content/Camera/TextMeshPro - InputField Rot Speed X");
+
+            HeightAdjustInputField = GameObject.Instantiate(camRotXField.GetComponent<TMP_InputField>(), fkPanel.transform);
+            HeightAdjustInputField.name = "InputField HeightAdj";
+            HeightAdjustInputField.transform.localPosition = new Vector3(100, HeightAdjustSlider.transform.localPosition.y + 15, 0);
+            HeightAdjustInputField.GetComponent<RectTransform>().sizeDelta = new Vector2(80, 20);
+            HeightAdjustInputField.onValueChanged = new TMP_InputField.OnChangeEvent();
+            HeightAdjustInputField.onEndEdit = new TMP_InputField.SubmitEvent();
+            HeightAdjustInputField.characterLimit = 6;
+#endif
             HeightAdjustInputField.onEndEdit.AddListener((string s) => { 
                 if (float.TryParse(s, out float value))
                 {
@@ -93,7 +113,6 @@ namespace FKHeightAdjustUI
                     }
                 }
             });
-
 
             // Clone Button
             GameObject fkButton = GameObject.Find("StudioScene/Canvas Main Menu/02_Manipulate/00_Chara/02_Kinematic/Viewport/Content/FK");

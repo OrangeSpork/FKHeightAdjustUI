@@ -5,15 +5,21 @@ using KKAPI;
 using KKAPI.Chara;
 using Studio;
 using System;
+using ExtensibleSaveFormat;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FKHeightAdjustUI
 {
+#if AI || HS2
+    [BepInProcess("StudioNEOV2")]
+#else
+    [BepInProcess("CharaStudio")]
+#endif
     [BepInPlugin(GUID, PluginName, Version)]
     [BepInDependency(KoikatuAPI.GUID, KoikatuAPI.VersionConst)]
     [BepInDependency(KKABMX.Core.KKABMX_Core.GUID, KKABMX.Core.KKABMX_Core.Version)]
-    [BepInProcess("StudioNEOV2")]
     public class FKHeightAdjustUIPlugin : BaseUnityPlugin
     {
         public const string GUID = "orange.spork.fkheightadjustuiplugin";
@@ -46,8 +52,36 @@ namespace FKHeightAdjustUI
             harmony.Patch(typeof(MPCharCtrl).GetNestedType("FKInfo", AccessTools.all).GetMethod("Init"), null, new HarmonyMethod(typeof(FKHeightAdjustUI).GetMethod(nameof(FKHeightAdjustUI.InitUI), AccessTools.all)));
             harmony.Patch(typeof(MPCharCtrl).GetNestedType("FKInfo", AccessTools.all).GetMethod("UpdateInfo"), null, new HarmonyMethod(typeof(FKHeightAdjustUI).GetMethod(nameof(FKHeightAdjustUI.UpdateUI), AccessTools.all)));
 
+            ExtendedSave.PoseBeingLoaded += ExtendedSave_PoseBeingLoaded;
 #if DEBUG
             Log.LogInfo("FK Height Adjust UI Plugin Loaded");
+#endif
+        }
+
+        private void ExtendedSave_PoseBeingLoaded(string poseName, PauseCtrl.FileInfo fileInfo, OCIChar ociChar, ExtendedSave.GameNames gameName)
+        {
+#if KK || KKS
+            if (gameName == ExtendedSave.GameNames.AIGirl || gameName == ExtendedSave.GameNames.HoneySelect2)
+            {
+                var controller = ociChar.charInfo.gameObject.GetComponent<FKHeightAdjustUICharaController>();
+                StartCoroutine(CorrectHeight());
+                IEnumerator CorrectHeight()
+                {
+                    yield return null;
+                    controller.HeightAdjust = controller.HeightAdjust / 10;
+                }
+            }
+#elif AI || HS2
+            if (gameName != ExtendedSave.GameNames.AIGirl && gameName != ExtendedSave.GameNames.HoneySelect2 && gameName != ExtendedSave.GameNames.Unknown)
+            {
+                var controller = ociChar.charInfo.gameObject.GetComponent<FKHeightAdjustUICharaController>();
+                StartCoroutine(CorrectHeight());
+                IEnumerator CorrectHeight()
+                {
+                    yield return null;
+                    controller.HeightAdjust = controller.HeightAdjust * 10;
+                }
+            }
 #endif
         }
 
