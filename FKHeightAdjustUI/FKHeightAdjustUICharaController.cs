@@ -130,7 +130,9 @@ namespace FKHeightAdjustUI
                 if (HeightAdjustModifier == null)
                     HeightAdjustModifier = new BoneModifierData();
 
-                if (!(controller.ChaControl.GetOCIChar().oiCharInfo.enableFK && controller.ChaControl.GetOCIChar().oiCharInfo.activeFK[3]))
+                var charInfo = controller?.ChaControl?.GetOCIChar()?.oiCharInfo;
+
+                if (!(charInfo != null && charInfo.enableFK && charInfo.activeFK[3]))
                     return null;
 
                 if (!HeightAdjustBones.Contains(bone))
